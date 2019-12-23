@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "ef3aa3224b3998a75010c14fbb714d62",
+    "entities": [
+      {
+        "tableName": "quiz_question",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `question` TEXT, `choice1` TEXT, `choice2` TEXT, `choice3` TEXT, `answer_number` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "question_id",
+            "columnName": "question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "question",
+            "columnName": "question",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "choice1",
+            "columnName": "choice1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "choice2",
+            "columnName": "choice2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "choice3",
+            "columnName": "choice3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "answer_number",
+            "columnName": "answer_number",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ef3aa3224b3998a75010c14fbb714d62')"
+    ]
+  }
+}
