@@ -31,13 +31,13 @@
         android:layout_marginRight="188dp"
         android:layout_marginBottom="44dp"
         android:text="Play Random Quiz"
-        app:layout_constraintBottom_toTopOf="@+id/id_category"
+        app:layout_constraintBottom_toTopOf="@+id/id_categoryButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/id_titleApp"
         app:layout_constraintTop_toBottomOf="@+id/id_titleApp" />
 
     <Button
-        android:id="@+id/id_category"
+        android:id="@+id/id_categoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="69dp"
@@ -64,9 +64,9 @@
         android:layout_marginBottom="169dp"
         android:text="World score"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/id_category"
+        app:layout_constraintEnd_toEndOf="@+id/id_categoryButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_category" />
+        app:layout_constraintTop_toBottomOf="@+id/id_categoryButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

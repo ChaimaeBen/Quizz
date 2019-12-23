@@ -57,39 +57,6 @@ next = findViewById(R.id.id_next);
         showNextQuestion();
 
 
-Question q1 = new Question(0,"A is correct","A","B","C",1,"Film");
-        Question q2 = new Question(0,"B is correct","A","B","C",2,"Video Games");
-
-        Question q3 = new Question(0,"C is correct","A","B","C",3,"History");
-
-        Question q4 = new Question(0,"A is correct","A","B","C",1,"Sports");
-        Question q5 = new Question(0,"B is correct","A","B","C",1,"Board games");
-        Question q6 = new Question(0,"C is correct","A","B","C",3,"Television");
-        Question q7 = new Question(0,"B is correct","A","B","C",2,"Mythology");
-        Question q8 = new Question(0,"A is correct","A","B","C",1,"Animals");
-
-        Question q9 = new Question(0,"B is correct","A","B","C",2,"Science & nature");
-        Question q10 = new Question(0,"C is correct","A","B","C",3,"Geography");
-        Question q11 = new Question(0,"A is correct","A","B","C",1,"Politics");
-        Question q12 = new Question(0,"B is correct","A","B","C",2,"Vehicles");
-
-
-        mrep.insert(q1);
-        mrep.insert(q2);
-        mrep.insert(q3);
-        mrep.insert(q4);
-        mrep.insert(q5);
-        mrep.insert(q6);
-        mrep.insert(q7);
-        mrep.insert(q8);
-
-        mrep.insert(q9);
-        mrep.insert(q11);
-        mrep.insert(q12);
-
-        mrep.insert(q10);
-
-
 
 
         next.setOnClickListener(new View.OnClickListener() {

@@ -24,19 +24,20 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
-
+    private Button catButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         startButton = findViewById(R.id.id_startButton);
+        catButton = findViewById(R.id.id_categoryButton);
 
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DirectToQuiz();
-            }
+        catButton.setOnClickListener((View v) -> {
+            DirectToCategory();
+        });
+        startButton.setOnClickListener((View v) -> {
+            DirectToQuiz();
         });
 
     }
@@ -49,4 +50,8 @@ private void DirectToQuiz(){
 startActivity(intent);
     }
 
+    private void DirectToCategory(){
+        Intent intent = new Intent(MainActivity.this,categoryListActivity.class);
+        startActivity(intent);
+    }
 }
