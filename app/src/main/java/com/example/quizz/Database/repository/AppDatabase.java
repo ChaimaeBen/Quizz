@@ -37,7 +37,7 @@ public abstract class AppDatabase extends RoomDatabase {
             }
             return INSTANCE;
         }
-        static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+        static final Migration MIGRATION_1_2 = new Migration(1, 3) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
             database.execSQL("ALTER TABLE quiz_question ADD COLUMN category TEXT");

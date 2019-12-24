@@ -54,9 +54,10 @@ public class categoryDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.category_detail, container, false);
 
         // Show the dummy content as text in a TextView.
+        /*
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.category_detail)).setText(mItem.details);
-        }
+        }*/
 
         return rootView;
     }

@@ -22,7 +22,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.quizz.categoryListActivity" />
         </activity>
-        <activity android:name=".CategoryActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".QuestionActivity" />
         <activity android:name=".MainActivity">

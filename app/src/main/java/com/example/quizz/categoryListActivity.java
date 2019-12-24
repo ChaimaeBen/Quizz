@@ -36,16 +36,7 @@ public class categoryListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        if (findViewById(R.id.category_detail_container) != null) {
+          if (findViewById(R.id.fragment4) != null) {
 
             mTwoPane = true;
         }
@@ -75,7 +66,7 @@ public class categoryListActivity extends AppCompatActivity {
                     categoryDetailFragment fragment = new categoryDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.category_detail_container, fragment)
+                            .replace(R.id.fragment4, fragment)
                             .commit();
                 } else {
                     Context context = view.getContext();

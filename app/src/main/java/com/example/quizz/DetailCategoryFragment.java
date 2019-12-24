@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -20,29 +21,26 @@ import android.widget.TextView;
 import com.example.quizz.Database.repository.QuestionRepository;
 import com.example.quizz.models.Question;
 
+import java.util.Collections;
 import java.util.List;
 
 
 public class DetailCategoryFragment extends Fragment {
-    private QuestionRepository mrep;
-    private TextView TextQuestions, TextScore,TextCount,TextTime;
-    private RadioGroup group;
-    private RadioButton rad1, rad2, rad3;
-    private Question current;
-    private Button next;
-    private int score;
-    private boolean answer;
-    private List<Question> mQuestions;
-    private int questionCounter;
-    private int questionTotal;
-    private ColorStateList textDefaultColor;
+
     View view;
+
+    private TextView TextQuestions, TextScore,TextCount,TextTime;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_detail_category, container, false);
+
+      TextQuestions =view.findViewById(R.id.detail_question);
+     TextQuestions.setText("modified question");
 
         return view;
     }

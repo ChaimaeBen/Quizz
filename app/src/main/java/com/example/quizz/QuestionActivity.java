@@ -50,7 +50,8 @@ next = findViewById(R.id.id_next);
         textDefaultColor = rad3.getTextColors();
 
         mrep = new QuestionRepository(this.getApplication());
-        mQuestions= mrep.getAllQuestions();
+
+          mQuestions= mrep.getAllQuestions();
         questionTotal = mQuestions.size();
         Collections.shuffle(mQuestions);
 

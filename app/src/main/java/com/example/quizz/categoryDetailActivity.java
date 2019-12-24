@@ -15,7 +15,12 @@ import androidx.appcompat.app.ActionBar;
 
 import android.view.MenuItem;
 
-
+/**
+ * An activity representing a single category detail screen. This
+ * activity is only used on narrow width devices. On tablet-size devices,
+ * item details are presented side-by-side with a list of items
+ * in a {@link categoryListActivity}.
+ */
 public class categoryDetailActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +31,7 @@ public class categoryDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -33,14 +39,15 @@ public class categoryDetailActivity extends AppCompatActivity {
 
 
         if (savedInstanceState == null) {
-
+            // Create the detail fragment and add it to the activity
+            // using a fragment transaction.
             Bundle arguments = new Bundle();
             arguments.putString(categoryDetailFragment.ARG_ITEM_ID,
                     getIntent().getStringExtra(categoryDetailFragment.ARG_ITEM_ID));
             categoryDetailFragment fragment = new categoryDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.category_detail_container, fragment)
+                    .add(R.id.fragment4, fragment)
                     .commit();
         }
     }
