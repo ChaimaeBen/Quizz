@@ -3,10 +3,12 @@ package com.example.quizz.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "quiz_question")
+@Entity(indices = {@Index("question_id")},tableName = "Question",foreignKeys = {@ForeignKey(entity = Category.class,childColumns = "category_id",parentColumns = "category_id")})
 
 public class Question {
     @PrimaryKey(autoGenerate = true)
@@ -14,8 +16,8 @@ public class Question {
     private int question_id;
     @ColumnInfo(name = "question")
     private String question;
-    @ColumnInfo(name = "category")
-    private String category;
+    @ColumnInfo(name = "category_id")
+    private int category_id;
     @ColumnInfo(name = "choice1")
     private String choice1;
     @ColumnInfo(name = "choice2")
@@ -27,29 +29,30 @@ public class Question {
     private int answer_number;
 
 
-    public Question(int question_id,String question, String choice1, String choice2, String choice3, int answer_number,String category) {
+    public Question(int question_id, String question, String choice1, String choice2, String choice3, int answer_number,int category_id) {
         this.question_id = question_id;
         this.question = question;
-        this.category = category;
         this.choice1 = choice1;
         this.choice2 = choice2;
         this.choice3 = choice3;
         this.answer_number = answer_number;
+        this.category_id = category_id;
+
     }
 
+    public int getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
 
     @Ignore
     public Question() {
 
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public int getQuestion_id() {
         return question_id;

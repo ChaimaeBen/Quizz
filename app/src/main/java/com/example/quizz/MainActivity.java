@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.quizz.Database.repository.QuestionRepository;
 import com.example.quizz.ViewModel.QuestionViewModel;
+import com.example.quizz.models.Category;
 import com.example.quizz.models.Question;
 
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private Button catButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener((View v) -> {
             DirectToQuiz();
         });
+
+
+
+
 
     }
 

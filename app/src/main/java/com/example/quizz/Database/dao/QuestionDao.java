@@ -14,18 +14,21 @@ import java.util.List;
 @Dao
 public interface QuestionDao   {
 
-    @Query("SELECT * FROM quiz_question")
+    @Query("SELECT * FROM Question")
   List<Question>getAll();
 
-    @Query("SELECT * FROM quiz_question where answer_number LIKE :number")
+    @Query("SELECT * FROM Question where answer_number LIKE :number")
     Question getByNumber(String number);
 
-    @Query("SELECT * FROM quiz_question where question_id=:Id")
+    @Query("SELECT * FROM Question where question_id=:Id")
     Question getById(int Id);
 
-    @Query("DELETE FROM quiz_question")
+    @Query("DELETE FROM Question")
     void deleteAll();
 
+
+    @Query("SELECT * FROM Question where category_id =:cat")
+    List<Question>getQuestionsWithCategory(int cat);
 
  @Insert
     void insert(Question... question);
@@ -33,7 +36,7 @@ public interface QuestionDao   {
     @Update
     void Update(Question question);
 
-    @Query("DELETE FROM quiz_question where question_id = :id")
+    @Query("DELETE FROM Question where question_id = :id")
     void deleteById(int id);
 
 

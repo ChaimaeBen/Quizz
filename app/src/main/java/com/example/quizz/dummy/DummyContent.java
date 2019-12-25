@@ -17,38 +17,38 @@ public class DummyContent {
     static {
 
             // Add 3 sample items.
-            addItem(new Category("1", "History",
+            addItem(new Category(0, "History",
                     "difficulty: hard"));
-            addItem(new Category("2", "Video Games",
+            addItem(new Category(0, "Video Games",
                     "difficulty: easy"));
-            addItem(new Category("3", "Television",
+            addItem(new Category(0, "Television",
                     "difficulty: meduim"));
 
-        addItem(new Category("4", "Science & Nature",
+        addItem(new Category(0, "Science & Nature",
                 "difficulty: hard"));
-        addItem(new Category("5", "Board games",
+        addItem(new Category(0, "Board games",
                 "difficulty: easy"));
-        addItem(new Category("6", "Mythology",
+        addItem(new Category(0, "Mythology",
                 "difficulty: hard"));
-        addItem(new Category("7", "Animals",
+        addItem(new Category(0, "Animals",
                 "difficulty: meduim"));
-        addItem(new Category("8", "Politics",
+        addItem(new Category(0, "Politics",
                 "difficulty: meduim"));
-        addItem(new Category("9", "Vehicles",
+        addItem(new Category(0, "Vehicles",
                 "difficulty: easy"));
-        addItem(new Category("10", "Geography",
+        addItem(new Category(0, "Geography",
                 "difficulty: hard"));
 
-        addItem(new Category("11", "Film",
+        addItem(new Category(0, "Film",
                 "difficulty: hard"));
 
-        addItem(new Category("12", "Sports",
+        addItem(new Category(0, "Sports",
                 "difficulty: easy"));
         }
 
     private static void addItem(Category item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_MAP.put(String.valueOf(item.category_id), item);
     }
 
 

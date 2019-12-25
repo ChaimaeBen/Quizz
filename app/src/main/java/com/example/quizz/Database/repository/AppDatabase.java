@@ -10,15 +10,20 @@ import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.quizz.Database.dao.CategoryDao;
 import com.example.quizz.Database.dao.QuestionDao;
+import com.example.quizz.models.Category;
 import com.example.quizz.models.Question;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Question.class}, version = 3, exportSchema = false)
+@Database(entities = {Question.class, Category.class}, version = 4, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract QuestionDao questionDao();
+    public abstract CategoryDao categoryDao();
+
+
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 1;
     static final ExecutorService databaseWriteExecutor =
@@ -30,20 +35,16 @@ public abstract class AppDatabase extends RoomDatabase {
                 synchronized (AppDatabase.class) {
                     if (INSTANCE == null) {
                         INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                AppDatabase.class, "quizz_database").allowMainThreadQueries().addMigrations(MIGRATION_1_2).
-                                build();
+                                AppDatabase.class, "quiz_database").allowMainThreadQueries().fallbackToDestructiveMigration()
+                                .build();
                     }
                 }
             }
             return INSTANCE;
         }
-        static final Migration MIGRATION_1_2 = new Migration(1, 3) {
-        @Override
-        public void migrate(@NonNull SupportSQLiteDatabase database) {
-            database.execSQL("ALTER TABLE quiz_question ADD COLUMN category TEXT");
-        }
+
     };
-}
+
 
 
 

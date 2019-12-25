@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.quizz.Database.repository.CategoryRepository;
 import com.example.quizz.models.Category;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -23,7 +24,6 @@ import com.example.quizz.dummy.DummyContent;
 import java.util.List;
 
 public class categoryListActivity extends AppCompatActivity {
-
 
     private boolean mTwoPane;
 
@@ -60,9 +60,13 @@ public class categoryListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Category item = (Category) view.getTag();
+
+
+
+
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(categoryDetailFragment.ARG_ITEM_ID, item.id);
+                    arguments.putString(categoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
                     categoryDetailFragment fragment = new categoryDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -71,9 +75,8 @@ public class categoryListActivity extends AppCompatActivity {
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, categoryDetailActivity.class);
-                    intent.putExtra(categoryDetailFragment.ARG_ITEM_ID, item.id);
-
-                    context.startActivity(intent);
+                    intent.putExtra(categoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
+                            context.startActivity(intent);
                 }
             }
         };
@@ -95,8 +98,7 @@ public class categoryListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).name);
+            holder.mContentView.setText(mValues.get(position).category_name);
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
@@ -108,12 +110,10 @@ public class categoryListActivity extends AppCompatActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-            final TextView mIdView;
             final TextView mContentView;
 
             ViewHolder(View view) {
                 super(view);
-                mIdView = (TextView) view.findViewById(R.id.id_text);
                 mContentView = (TextView) view.findViewById(R.id.content);
             }
         }

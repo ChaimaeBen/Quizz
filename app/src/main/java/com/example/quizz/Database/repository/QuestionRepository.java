@@ -16,13 +16,13 @@ public class QuestionRepository {
 
     private QuestionDao mQuestionDao;
 private List<Question> mAllQuestions;
+private  List<Question> mCategories;
     private AppDatabase myDb;
 
     public QuestionRepository(Application application) {
         myDb = AppDatabase.getDatabase(application);
         mQuestionDao = myDb.questionDao();
         mAllQuestions = mQuestionDao.getAll();;
-
 
     }
 
@@ -34,6 +34,13 @@ private List<Question> mAllQuestions;
     ->{mQuestionDao.insert(questions);});
     }
 
+public List<Question> getCategories(int categories){
+        AppDatabase.databaseWriteExecutor.execute(()->{
+            mCategories = mQuestionDao.getQuestionsWithCategory(categories);});
+      return mCategories;
+
+
+    }
 
     public List<Question> getAllQuestions(){
         return mAllQuestions;

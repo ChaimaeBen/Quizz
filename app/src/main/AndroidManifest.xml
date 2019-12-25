@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ScoreActivity"></activity>
         <activity
             android:name=".categoryListActivity"
             android:label="@string/title_category_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".categoryDetailActivity"
             android:label="@string/title_category_detail"

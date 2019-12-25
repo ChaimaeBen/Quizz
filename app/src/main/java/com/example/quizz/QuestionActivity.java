@@ -13,7 +13,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.quizz.Database.repository.CategoryRepository;
 import com.example.quizz.Database.repository.QuestionRepository;
+import com.example.quizz.models.Category;
 import com.example.quizz.models.Question;
 
 import java.util.Collections;
@@ -21,6 +23,7 @@ import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity {
     private QuestionRepository mrep;
+    private CategoryRepository crep;
     private TextView TextQuestions, TextScore,TextCount,TextTime;
     private RadioGroup group;
     private RadioButton rad1, rad2, rad3;
@@ -51,7 +54,9 @@ next = findViewById(R.id.id_next);
 
         mrep = new QuestionRepository(this.getApplication());
 
-          mQuestions= mrep.getAllQuestions();
+
+
+        mQuestions= mrep.getAllQuestions();
         questionTotal = mQuestions.size();
         Collections.shuffle(mQuestions);
 

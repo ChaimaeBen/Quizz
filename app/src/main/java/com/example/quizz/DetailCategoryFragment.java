@@ -1,6 +1,7 @@
 package com.example.quizz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
@@ -32,7 +33,7 @@ public class DetailCategoryFragment extends Fragment {
     View view;
 
     private QuestionRepository mrep;
-    private TextView TextQuestions, TextScore,TextCount,TextTime;
+    private TextView TextQuestions, TextScore,TextCount,TextTime,Textcategory;
     private RadioGroup group;
     private RadioButton rad1, rad2, rad3;
     private Question current;
@@ -60,12 +61,14 @@ public class DetailCategoryFragment extends Fragment {
         rad1 = view.findViewById(R.id.detail_radio1);
         rad2 = view.findViewById(R.id.detail_radio2);
         rad3 = view.findViewById(R.id.detail_radio3);
+ Textcategory = view.findViewById(R.id.detail_categoryText);
 
         textDefaultColor = rad3.getTextColors();
 
         mrep = new QuestionRepository(this.getActivity().getApplication());
 
         mQuestions= mrep.getAllQuestions();
+
         questionTotal = mQuestions.size();
         Collections.shuffle(mQuestions);
 
