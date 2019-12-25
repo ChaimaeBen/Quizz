@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.quizz.Database.dao.CategoryDao;
 import com.example.quizz.Database.repository.CategoryRepository;
 import com.example.quizz.Database.repository.QuestionRepository;
 import com.example.quizz.models.Category;
@@ -24,10 +25,11 @@ import java.util.List;
 public class QuestionActivity extends AppCompatActivity {
     private QuestionRepository mrep;
     private CategoryRepository crep;
-    private TextView TextQuestions, TextScore,TextCount,TextTime;
+    private TextView TextQuestions, TextScore,TextCount,TextTime,TextCat;
     private RadioGroup group;
     private RadioButton rad1, rad2, rad3;
     private Question current;
+    private Category currentcat;
     private Button next;
     private int score;
     private boolean answer;
@@ -49,14 +51,14 @@ next = findViewById(R.id.id_next);
         rad1 = findViewById(R.id.id_radio1);
         rad2 = findViewById(R.id.id_radio2);
         rad3 = findViewById(R.id.id_radio3);
-
+       TextCat = findViewById(R.id.id_categoryText);
         textDefaultColor = rad3.getTextColors();
 
         mrep = new QuestionRepository(this.getApplication());
 
 
 
-        mQuestions= mrep.getAllQuestions();
+        mQuestions= mrep.getRandomQuestions();
         questionTotal = mQuestions.size();
         Collections.shuffle(mQuestions);
 
@@ -107,7 +109,8 @@ private void AnswerChecker(){
             current = mQuestions.get(questionCounter);
 
             TextQuestions.setText(current.getQuestion());
-            rad1.setText(current.getChoice1());
+
+           rad1.setText(current.getChoice1());
             rad2.setText(current.getChoice2());
             rad3.setText(current.getChoice3());
 

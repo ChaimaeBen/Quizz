@@ -67,6 +67,7 @@ public class categoryListActivity extends AppCompatActivity {
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
                     arguments.putString(categoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
+                    arguments.putString("Key",String.valueOf(item.getCategory_name()));
                     categoryDetailFragment fragment = new categoryDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()

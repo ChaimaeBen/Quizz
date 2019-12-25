@@ -16,13 +16,15 @@ public class QuestionRepository {
 
     private QuestionDao mQuestionDao;
 private List<Question> mAllQuestions;
+    private List<Question> rAllQuestions;
 private  List<Question> mCategories;
     private AppDatabase myDb;
 
     public QuestionRepository(Application application) {
         myDb = AppDatabase.getDatabase(application);
         mQuestionDao = myDb.questionDao();
-        mAllQuestions = mQuestionDao.getAll();;
+        mAllQuestions = mQuestionDao.getAll();
+        rAllQuestions = mQuestionDao.getAllRandom();
 
     }
 
@@ -39,12 +41,16 @@ public List<Question> getCategories(int categories){
             mCategories = mQuestionDao.getQuestionsWithCategory(categories);});
       return mCategories;
 
-
     }
 
     public List<Question> getAllQuestions(){
         return mAllQuestions;
    }
+
+    public List<Question> getRandomQuestions(){
+        return rAllQuestions;
+    }
+
 
    /*
     public void DeleteAllQuestions( List<Question>questions){
