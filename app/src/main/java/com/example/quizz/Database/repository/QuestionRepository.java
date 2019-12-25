@@ -37,8 +37,7 @@ private  List<Question> mCategories;
     }
 
 public List<Question> getCategories(int categories){
-        AppDatabase.databaseWriteExecutor.execute(()->{
-            mCategories = mQuestionDao.getQuestionsWithCategory(categories);});
+    mCategories = mQuestionDao.getQuestionsWithCategory(categories);
       return mCategories;
 
     }

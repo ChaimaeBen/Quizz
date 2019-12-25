@@ -1,16 +1,17 @@
 package com.example.quizz;
 
-import android.content.Context;
-import android.content.Intent;
+import android.app.Activity;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import com.example.quizz.Database.repository.CategoryRepository;
+import com.example.quizz.Database.repository.QuestionRepository;
+import com.example.quizz.models.Category;
+import com.example.quizz.models.Question;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,18 +22,31 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.quizz.Database.repository.QuestionRepository;
-import com.example.quizz.models.Question;
+import com.example.quizz.dummy.DummyContent;
 
-import java.util.Collections;
 import java.util.List;
 
+/**
+ * A fragment representing a single Category detail screen.
+ * This fragment is either contained in a {@link CategoryListActivity}
+ * in two-pane mode (on tablets) or a {@link CategoryDetailActivity}
+ * on handsets.
+ */
+public class CategoryDetailFragment extends Fragment {
+    /**
+     * The fragment argument representing the item ID that this fragment
+     * represents.
+     */
+    public static final String ARG_ITEM_ID = "item_id";
 
-public class DetailCategoryFragment extends Fragment {
+    /**
+     * The dummy content this fragment is presenting.
+     */
 
-    View view;
-
+    View rootView;
+    private Category mItem;
     private QuestionRepository mrep;
+    private CategoryRepository crep;
     private TextView TextQuestions, TextScore,TextCount,TextTime,Textcategory;
     private RadioGroup group;
     private RadioButton rad1, rad2, rad3;
@@ -45,37 +59,63 @@ public class DetailCategoryFragment extends Fragment {
     private int questionTotal;
     private ColorStateList textDefaultColor;
 
+    /**
+     * Mandatory empty constructor for the fragment manager to instantiate the
+     * fragment (e.g. upon screen orientation changes).
+     */
+    public CategoryDetailFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments().containsKey(ARG_ITEM_ID)) {
+            // Load the dummy content specified by the fragment
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
+            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+
+            Activity activity = this.getActivity();
+            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
+            if (appBarLayout != null) {
+                appBarLayout.setTitle(mItem.category_name);
+            }
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-// Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_detail_category, container, false);
+         rootView = inflater.inflate(R.layout.category_detail, container, false);
 
-        next = view.findViewById(R.id.detail_next);
-        TextQuestions =view.findViewById(R.id.detail_question);
-        TextScore=view.findViewById(R.id.detail_totalText);
-        TextTime=view.findViewById(R.id.detail_countdown);
-        TextCount=view.findViewById(R.id.detail_questionCount);
-        group = view.findViewById(R.id.radioDetailGroup);
-        rad1 = view.findViewById(R.id.detail_radio1);
-        rad2 = view.findViewById(R.id.detail_radio2);
-        rad3 = view.findViewById(R.id.detail_radio3);
- Textcategory = view.findViewById(R.id.detail_categoryText);
+
+        next = rootView.findViewById(R.id.detail_next);
+        TextQuestions =rootView.findViewById(R.id.detail_question);
+        TextScore=rootView.findViewById(R.id.detail_totalText);
+        TextCount=rootView.findViewById(R.id.detail_questionCount);
+        group = rootView.findViewById(R.id.radioDetailGroup);
+        rad1 = rootView.findViewById(R.id.detail_radio1);
+        rad2 = rootView.findViewById(R.id.detail_radio2);
+        rad3 = rootView.findViewById(R.id.detail_radio3);
 
         textDefaultColor = rad3.getTextColors();
 
-        mrep = new QuestionRepository(this.getActivity().getApplication());
+        // Show the dummy content as text in a TextView.
+        if (mItem != null) {
+            ((TextView) rootView.findViewById(R.id.category_detail)).setText(mItem.category_details);
+        }
 
-        mQuestions= mrep.getAllQuestions();
+          System.out.println(mItem.category_name);
+
+        mrep = new QuestionRepository(this.getActivity().getApplication());
+        crep = new CategoryRepository(this.getActivity().getApplication());
+
+        mQuestions= mrep.getCategories(mItem.getCategory_id());
 
         questionTotal = mQuestions.size();
-        Collections.shuffle(mQuestions);
 
         showNextQuestion();
-
-
-
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,15 +134,12 @@ public class DetailCategoryFragment extends Fragment {
         });
 
 
-        return view;
+        return rootView;
     }
-
-
-
     private void AnswerChecker(){
         answer = true;
 
-        RadioButton select = view.findViewById(group.getCheckedRadioButtonId());
+        RadioButton select = rootView.findViewById(group.getCheckedRadioButtonId());
         int number = group.indexOfChild(select)+1;
 
         if(number == current.getAnswer_number()){
@@ -169,6 +206,3 @@ public class DetailCategoryFragment extends Fragment {
         }
     }
 }
-
-
-

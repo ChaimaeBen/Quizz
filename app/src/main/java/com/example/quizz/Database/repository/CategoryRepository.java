@@ -41,7 +41,11 @@ private Category cat;
            return cat;
 
     }
+    public Category getNameById(String n) {
+        cat = mCategoryDao.getByIdName(n);
+        return cat;
 
+    }
     public void getAllCategories(@NonNull LoadDataCallback<Category> activityCallback) {
         new GetCategoriesAsyncTask(mCategoryDao, activityCallback).execute();
     }

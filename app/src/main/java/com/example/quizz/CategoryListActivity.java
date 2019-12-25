@@ -23,8 +23,23 @@ import com.example.quizz.dummy.DummyContent;
 
 import java.util.List;
 
-public class categoryListActivity extends AppCompatActivity {
+/**
+ * An activity representing a list of Categories. This activity
+ * has different presentations for handset and tablet-size devices. On
+ * handsets, the activity presents a list of items, which when touched,
+ * lead to a {@link CategoryDetailActivity} representing
+ * item details. On tablets, the activity presents the list of items and
+ * item details side-by-side using two vertical panes.
+ */
+public class CategoryListActivity extends AppCompatActivity {
 
+
+
+    CategoryRepository mrep;
+    /**
+     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
+     * device.
+     */
     private boolean mTwoPane;
 
     @Override
@@ -36,8 +51,15 @@ public class categoryListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-          if (findViewById(R.id.fragment4) != null) {
 
+
+
+
+        if (findViewById(R.id.category_detail_container) != null) {
+            // The detail container view will be present only in the
+            // large-screen layouts (res/values-w900dp).
+            // If this view is present, then the
+            // activity should be in two-pane mode.
             mTwoPane = true;
         }
 
@@ -50,39 +72,42 @@ public class categoryListActivity extends AppCompatActivity {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));
     }
 
+
+
+
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final categoryListActivity mParentActivity;
+        private final CategoryListActivity mParentActivity;
         private final List<Category> mValues;
         private final boolean mTwoPane;
+
+
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Category item = (Category) view.getTag();
-
-
-
-
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(categoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
-                    arguments.putString("Key",String.valueOf(item.getCategory_name()));
-                    categoryDetailFragment fragment = new categoryDetailFragment();
+                    arguments.putString(CategoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
+                    System.out.println(item.getCategory_id());
+                    CategoryDetailFragment fragment = new CategoryDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment4, fragment)
+                            .replace(R.id.category_detail_container, fragment)
                             .commit();
                 } else {
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, categoryDetailActivity.class);
-                    intent.putExtra(categoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
-                            context.startActivity(intent);
+                    Intent intent = new Intent(context, CategoryDetailActivity.class);
+                    intent.putExtra(CategoryDetailFragment.ARG_ITEM_ID, String.valueOf(item.getCategory_id()));
+
+                    System.out.println(item.getCategory_id());
+                    context.startActivity(intent);
                 }
             }
         };
 
-        SimpleItemRecyclerViewAdapter(categoryListActivity parent,
+        SimpleItemRecyclerViewAdapter(CategoryListActivity parent,
                                       List<Category> items,
                                       boolean twoPane) {
             mValues = items;
@@ -111,6 +136,7 @@ public class categoryListActivity extends AppCompatActivity {
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
+
             final TextView mContentView;
 
             ViewHolder(View view) {

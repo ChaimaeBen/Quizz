@@ -58,7 +58,7 @@ startActivity(intent);
     }
 
     private void DirectToCategory(){
-        Intent intent = new Intent(MainActivity.this,categoryListActivity.class);
+        Intent intent = new Intent(MainActivity.this,CategoryListActivity.class);
         startActivity(intent);
     }
 }
