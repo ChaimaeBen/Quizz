@@ -14,7 +14,7 @@ import java.util.List;
 public class CategoryRepository {
 
     private CategoryDao mCategoryDao;
-private Category cat;
+    private Category cat;
     private AppDatabase myDb;
 
     public CategoryRepository(Application application) {
@@ -37,15 +37,11 @@ private Category cat;
     }
 
     public Category getCategoryById(int id) {
-           cat = mCategoryDao.getById(id);
-           return cat;
-
-    }
-    public Category getNameById(String n) {
-        cat = mCategoryDao.getByIdName(n);
+        cat = mCategoryDao.getById(id);
         return cat;
 
     }
+
     public void getAllCategories(@NonNull LoadDataCallback<Category> activityCallback) {
         new GetCategoriesAsyncTask(mCategoryDao, activityCallback).execute();
     }

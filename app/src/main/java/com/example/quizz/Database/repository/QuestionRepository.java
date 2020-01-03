@@ -15,9 +15,9 @@ import java.util.concurrent.ExecutionException;
 public class QuestionRepository {
 
     private QuestionDao mQuestionDao;
-private List<Question> mAllQuestions;
+    private List<Question> mAllQuestions;
     private List<Question> rAllQuestions;
-private  List<Question> mCategories;
+    private  List<Question> mCategories;
     private AppDatabase myDb;
 
     public QuestionRepository(Application application) {
@@ -29,22 +29,22 @@ private  List<Question> mCategories;
     }
 
 
-     public void insert( Question questions) {
+    public void insert( Question questions) {
         System.out.println("entered insert");
 
         AppDatabase.databaseWriteExecutor.execute(()
-    ->{mQuestionDao.insert(questions);});
+                ->{mQuestionDao.insert(questions);});
     }
 
-public List<Question> getCategories(int categories){
-    mCategories = mQuestionDao.getQuestionsWithCategory(categories);
-      return mCategories;
+    public List<Question> getCategories(int categories){
+        mCategories = mQuestionDao.getQuestionsWithCategory(categories);
+        return mCategories;
 
     }
 
     public List<Question> getAllQuestions(){
         return mAllQuestions;
-   }
+    }
 
     public List<Question> getRandomQuestions(){
         return rAllQuestions;
@@ -57,5 +57,4 @@ public List<Question> getCategories(int categories){
     }
 */
 }
-
 

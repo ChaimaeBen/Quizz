@@ -1,5 +1,6 @@
 package com.example.quizz.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
@@ -8,11 +9,13 @@ import androidx.room.PrimaryKey;
 @Entity(indices = {@Index("category_id")},tableName = "Category")
 
 public  class Category {
+    @NonNull
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "category_id")
-
     public int category_id;
+    @ColumnInfo(name = "category_name")
     public String category_name;
+    @ColumnInfo(name = "category_details")
     public String category_details;
 
     public Category(int category_id, String category_name, String category_details) {

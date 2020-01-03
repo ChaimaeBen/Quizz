@@ -2,6 +2,7 @@ package com.example.quizz.Database.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -22,8 +23,7 @@ public interface CategoryDao {
     @Query("SELECT * FROM Category where category_id=:Id")
     Category getById(int Id);
 
-    @Query("SELECT category_id FROM Category where category_name=:name")
-    Category getByIdName(String name);
+
     @Insert
     void insert(Category category);
 

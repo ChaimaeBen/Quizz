@@ -1,6 +1,7 @@
 package com.example.quizz.models;
 
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -8,15 +9,22 @@ import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(indices = {@Index("question_id")},tableName = "Question",foreignKeys = {@ForeignKey(entity = Category.class,childColumns = "category_id",parentColumns = "category_id")})
+@Entity(tableName = "Question",
+        foreignKeys = {@ForeignKey(
+                entity = Category.class,
+                childColumns = "category_id",
+                parentColumns = "category_id"
+        ,onUpdate = ForeignKey.CASCADE,
+        onDelete = ForeignKey.CASCADE)})
 
 public class Question {
+    @NonNull
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "question_id")
+    @ColumnInfo(name = "question_id",index = true)
     private int question_id;
     @ColumnInfo(name = "question")
     private String question;
-    @ColumnInfo(name = "category_id")
+    @ColumnInfo(name = "category_id",index = true)
     private int category_id;
     @ColumnInfo(name = "choice1")
     private String choice1;
@@ -25,7 +33,6 @@ public class Question {
     @ColumnInfo(name = "choice3")
     private String choice3;
     @ColumnInfo(name = "answer_number")
-
     private int answer_number;
 
 

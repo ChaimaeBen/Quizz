@@ -58,6 +58,37 @@ next = findViewById(R.id.id_next);
 
 
 
+        Question q1 = new Question(0,"A is correct","A","B","C",1,1);
+        Question q2 = new Question(0,"C is correct","A","B","C",3,2);
+        Question q3 = new Question(0,"B is correct","A","B","C",2,3);
+        Question q4 = new Question(0,"A is correct","A","B","C",1,4);
+        Question q5 = new Question(0,"B is correct","A","B","C",2,12);
+        Question q6 = new Question(0,"C is correct","A","B","C",3,5);
+        Question q7 = new Question(0,"C is correct","A","B","C",3,6);
+        Question q8 = new Question(0,"A is correct","A","B","C",1,7);
+        Question q9 = new Question(0,"B is correct","A","B","C",2,8);
+        Question q10 = new Question(0,"B is correct","A","B","C",2,9);
+        Question q11 = new Question(0,"A is correct","A","B","C",1,10);
+        Question q12 = new Question(0,"A is correct","A","B","C",1,11);
+
+
+
+        mrep.insert(q1);
+        mrep.insert(q2);
+        mrep.insert(q3);
+        mrep.insert(q4);
+        mrep.insert(q5);
+        mrep.insert(q6);
+        mrep.insert(q7);
+        mrep.insert(q8);
+        mrep.insert(q9);
+        mrep.insert(q10);
+        mrep.insert(q11);
+        mrep.insert(q12);
+
+
+
+
         mQuestions= mrep.getRandomQuestions();
         questionTotal = mQuestions.size();
         Collections.shuffle(mQuestions);
