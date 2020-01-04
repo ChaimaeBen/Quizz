@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ResultScoreActivity"></activity>
         <activity
             android:name=".CategoryListActivity"
             android:label="@string/title_category_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CategoryDetailActivity"
             android:label="@string/title_category_detail"
@@ -22,8 +23,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.quizz.CategoryListActivity" />
         </activity>
-        <activity android:name=".ScoreActivity" />
-        <activity android:name=".ResultActivity" />
         <activity android:name=".QuestionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,6 +1,7 @@
 package com.example.quizz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class CategoryDetailFragment extends Fragment {
      * represents.
      */
     public static final String ARG_ITEM_ID = "item_id";
+    public static final String display_score = "newScore";
 
     /**
      * The dummy content this fragment is presenting.
@@ -174,7 +176,9 @@ public class CategoryDetailFragment extends Fragment {
 
 
     private void endQuiz(){
-        getActivity().finish();
+        Intent intent= new Intent(getActivity(), ResultScoreActivity.class);
+        intent.putExtra("newScore",score);
+        startActivity(intent);
     }
 
 
