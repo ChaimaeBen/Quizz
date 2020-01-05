@@ -22,7 +22,7 @@
     <string name="enter_lastname" translatable="false" tools:ignore="ExtraTranslation"> You must enter lastname</string>
     <string name="confirm_password" translatable="false" tools:ignore="ExtraTranslation">You must confirm password</string>
     <string name="match_password" translatable="false" tools:ignore="ExtraTranslation">password do not match</string>
-    <string name="highest_score" translatable="false" tools:ignore="ExtraTranslation">highest score</string>
+    <string name="highest_score" translatable="false" tools:ignore="ExtraTranslation">highest score:</string>
     <string name="Quit" translatable="false" tools:ignore="ExtraTranslation">Quit</string>
     <string name="retry" translatable="false" tools:ignore="ExtraTranslation">Retry</string>
 

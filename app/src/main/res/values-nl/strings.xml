@@ -22,7 +22,7 @@
     <string name="enter_lastname" translatable="false" tools:ignore="ExtraTranslation"> Voer uw achternaam</string>
     <string name="confirm_password" translatable="false" tools:ignore="ExtraTranslation">bevestig je wachtwoord</string>
     <string name="match_password" translatable="false" tools:ignore="ExtraTranslation">wachtwoorden komen niet overeen</string>
-    <string name="highest_score" translatable="false" tools:ignore="ExtraTranslation">hoogste score</string>
+    <string name="highest_score" translatable="false" tools:ignore="ExtraTranslation">hoogste score:</string>
     <string name="Quit" translatable="false" tools:ignore="ExtraTranslation">stoppen</string>
     <string name="retry" translatable="false" tools:ignore="ExtraTranslation">Opnieuw</string>
 

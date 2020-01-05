@@ -4,71 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/minimalist"
     tools:context=".ResultScoreActivity">
 
     <TextView
         android:id="@+id/id_GameOverText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
         android:layout_marginStart="87dp"
         android:layout_marginLeft="87dp"
         android:layout_marginTop="74dp"
         android:layout_marginEnd="87dp"
         android:layout_marginRight="87dp"
         android:layout_marginBottom="52dp"
+        android:background="#3B447E"
+        android:fontFamily="sans-serif-black"
         android:text="Game Over"
-        android:textSize="30sp"
+        android:textColor="#F82169"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="258dp"
+        android:layout_width="260dp"
         android:layout_height="45dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="145dp"
         android:layout_marginEnd="67dp"
         android:layout_marginRight="67dp"
+        android:background="#363F72"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/id_GameOverText">
 
         <TextView
             android:id="@+id/id_scoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Score" />
+            android:text="Score:"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/id_scoreResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="0" />
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="253dp"
-        android:layout_height="58dp"
+        android:layout_width="260dp"
+        android:layout_height="53dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginEnd="67dp"
         android:layout_marginRight="67dp"
-        android:layout_marginBottom="68dp"
+        android:background="#363F72"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/id_quitButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -77,41 +84,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/highest_score" />
+            android:text="@string/highest_score"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/id_highestScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="400" />
+            android:text="400"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/id_retryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/retry"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/id_quitButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <Button
         android:id="@+id/id_quitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/Quit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/id_retryButton"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
