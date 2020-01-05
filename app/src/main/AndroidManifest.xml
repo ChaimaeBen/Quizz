@@ -9,16 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultScoreActivity"></activity>
+        <activity android:name=".ResultScoreActivity" />
         <activity
             android:name=".CategoryListActivity"
             android:label="@string/title_category_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+           />
         <activity
             android:name=".CategoryDetailActivity"
             android:label="@string/title_category_detail"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".CategoryListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.quizz.CategoryListActivity" />

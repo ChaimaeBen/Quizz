@@ -31,7 +31,7 @@ public class CategoryDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
+getSupportActionBar().show();
         // Show the Up button in the action bar.
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
