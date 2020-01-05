@@ -48,13 +48,11 @@ public class QuestionActivity extends AppCompatActivity {
 next = findViewById(R.id.id_next);
         TextQuestions =findViewById(R.id.id_question);
         TextScore=findViewById(R.id.id_totalText);
-        TextTime=findViewById(R.id.id_countdown);
         TextCount=findViewById(R.id.id_questionCount);
         group = findViewById(R.id.radioGroup);
         rad1 = findViewById(R.id.id_radio1);
         rad2 = findViewById(R.id.id_radio2);
         rad3 = findViewById(R.id.id_radio3);
-       TextCat = findViewById(R.id.id_categoryText);
         textDefaultColor = rad3.getTextColors();
 
         mrep = new QuestionRepository(this.getApplication());
@@ -118,7 +116,7 @@ private void AnswerChecker(){
             rad3.setText(current.getChoice3());
 
             questionCounter++;
-            TextCount.setText(R.string.question+" " + questionCounter + "/" + questionTotal);
+            TextCount.setText(getString(R.string.question )+" "+ questionCounter + "/" + questionTotal);
             answer = false;
             next.setText(R.string.confirm_button);
         }else{

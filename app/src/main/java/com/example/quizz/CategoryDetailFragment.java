@@ -169,7 +169,8 @@ public class CategoryDetailFragment extends Fragment {
             rad3.setText(current.getChoice3());
 
             questionCounter++;
-            TextCount.setText("Question: " + questionCounter + "/" + questionTotal);
+            TextCount.setText(getString(R.string.question )+" "+ questionCounter + "/" + questionTotal);
+
             answer = false;
             next.setText(R.string.confirm_button);
         }else{
