@@ -129,7 +129,7 @@ public class CategoryDetailFragment extends Fragment {
                     if(rad1.isChecked()||rad2.isChecked()||rad3.isChecked()){
                         AnswerChecker();
                     }else {
-                        Toast.makeText(getContext(), "Please select an answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.please_answer, Toast.LENGTH_SHORT).show();
                     }
                 }else{
                     showNextQuestion();
@@ -171,7 +171,7 @@ public class CategoryDetailFragment extends Fragment {
             questionCounter++;
             TextCount.setText("Question: " + questionCounter + "/" + questionTotal);
             answer = false;
-            next.setText("confirm");
+            next.setText(R.string.confirm_button);
         }else{
             endQuiz();
 
@@ -194,22 +194,22 @@ public class CategoryDetailFragment extends Fragment {
         switch (current.getAnswer_number()) {
             case 1:
                 rad1.setTextColor(Color.GREEN);
-                TextQuestions.setText("Answer 1 is correct");
+                TextQuestions.setText(R.string.sentence_correct1);
                 break;
             case 2:
                 rad2.setTextColor(Color.GREEN);
-                TextQuestions.setText("Answer 2 is correct");
+                TextQuestions.setText(R.string.sentence_correct2);
                 break;
             case 3:
                 rad3.setTextColor(Color.GREEN);
-                TextQuestions.setText("Answer 3 is correct");
+                TextQuestions.setText(R.string.sentence_correct3);
                 break;
         }
 
         if (questionCounter < questionTotal) {
-            next.setText("Next");
+            next.setText(R.string.next_button);
         } else {
-            next.setText("Finish");
+            next.setText(R.string.finish_button);
         }
     }
 }

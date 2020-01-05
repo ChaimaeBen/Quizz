@@ -75,12 +75,12 @@ private TextView txtCreate;
                 String pa = pass.getText().toString();
 
                 if (!isEmail(email)) {
-                    em.setError("You must enter valid email");
+                    em.setError(getText(R.string.enter_valid_email));
                 }else{
                     u.setEmail(email);
                 }
                 if (TextUtils.isEmpty(pa)) {
-                    pass.setError("You must enter password");
+                    pass.setError(getText(R.string.enter_password));
 
                 }else{u.setPassword(pa);}
 
@@ -95,7 +95,7 @@ private TextView txtCreate;
                     ft.replace(R.id.frame_main, llf);
                     ft.commit();
                 } else {
-                    Toast.makeText(getContext(), "email or password incorrect", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.incorrect, Toast.LENGTH_SHORT).show();
 
                 }
                 em.setText("");

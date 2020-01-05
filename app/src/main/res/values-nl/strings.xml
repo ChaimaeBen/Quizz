@@ -1,9 +1,47 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Quizz</string>
-    <string name="title_category_list">Categories</string>
-    <string name="title_category_detail">Category Detail</string>
+    <string name="title_category_list">Categorieën</string>
+    <string name="title_category_detail">categorie Detail</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next_button" tools:ignore="ExtraTranslation">volgende</string>
+    <string name="finish_button" translatable="false">voltooien</string>
+    <string name="confirm_button" translatable="false">bevestigen</string>
+    <string name="sentence_correct1" translatable="false" tools:ignore="ExtraTranslation">antwoord 1 is juist</string>
+    <string name="sentence_correct2" translatable="false" tools:ignore="ExtraTranslation">antwoord 2 is juist</string>
+    <string name="sentence_correct3" translatable="false" tools:ignore="ExtraTranslation">antwoord 3 is juist</string>
+    <string name="please_answer" translatable="false" tools:ignore="ExtraTranslation">duid een antwoord aan </string>
+    <string name="enter_valid_email" translatable="false" tools:ignore="ExtraTranslation"> Voer een geldig e-mailadres in.</string>
+    <string name="enter_password" translatable="false" tools:ignore="ExtraTranslation">Voer een wachtwoord in</string>
+    <string name="incorrect" translatable="false" tools:ignore="ExtraTranslation">  email of wachtwoord is verkeerd</string>
+    <string name="question" translatable="false" tools:ignore="ExtraTranslation">Vraag: </string>
+
+
+    <string name="enter_firstname" translatable="false" tools:ignore="ExtraTranslation">Voer uw voornaam</string>
+    <string name="enter_lastname" translatable="false" tools:ignore="ExtraTranslation"> Voer uw achternaam</string>
+    <string name="confirm_password" translatable="false" tools:ignore="ExtraTranslation">bevestig je wachtwoord</string>
+    <string name="match_password" translatable="false" tools:ignore="ExtraTranslation">wachtwoorden komen niet overeen</string>
+    <string name="highest_score" translatable="false" tools:ignore="ExtraTranslation">hoogste score</string>
+    <string name="Quit" translatable="false" tools:ignore="ExtraTranslation">stoppen</string>
+    <string name="retry" translatable="false" tools:ignore="ExtraTranslation">Opnieuw</string>
+
+
+    <string name="random_quiz" translatable="false" tools:ignore="ExtraTranslation">Willekeurige Quiz</string>
+    <string name="more_categories" translatable="false" tools:ignore="ExtraTranslation">meer categorieën</string>
+    <string name="world_score" translatable="false" tools:ignore="ExtraTranslation">Wereld scores</string>
+    <string name="welcome" translatable="false" tools:ignore="ExtraTranslation">Welkom Bij Quick Quiz</string>
+    <string name="login" translatable="false" tools:ignore="ExtraTranslation">Login</string>
+    <string name="email" translatable="false" tools:ignore="ExtraTranslation">email</string>
+    <string name="password" translatable="false" tools:ignore="ExtraTranslation">Wachtwoord</string>
+    <string name="register_yet" translatable="false" tools:ignore="ExtraTranslation">nog niet geregistreerd?</string>
+    <string name="create_account" translatable="false" tools:ignore="ExtraTranslation">Maak een account aan</string>
+
+    <string name="firstname" translatable="false" tools:ignore="ExtraTranslation">voornaam</string>
+    <string name="lastname" translatable="false" tools:ignore="ExtraTranslation">achternaam</string>
+    <string name="password_confirm" translatable="false" tools:ignore="ExtraTranslation">bevestig wachtwoord</string>
+    <string name="sign_in" translatable="false" tools:ignore="ExtraTranslation">Inloggen</string>
+    <string name="already_account" translatable="false" tools:ignore="ExtraTranslation"> Al een account?</string>
+    <string name="go_login" translatable="false" tools:ignore="ExtraTranslation"> ga naar login</string>
 
 </resources>

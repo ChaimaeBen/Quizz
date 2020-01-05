@@ -77,7 +77,7 @@ next = findViewById(R.id.id_next);
             if(rad1.isChecked()||rad2.isChecked()||rad3.isChecked()){
                 AnswerChecker();
             }else {
-                Toast.makeText(QuestionActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                Toast.makeText(QuestionActivity.this, R.string.please_answer, Toast.LENGTH_SHORT).show();
             }
             }else{
                 showNextQuestion();
@@ -118,9 +118,9 @@ private void AnswerChecker(){
             rad3.setText(current.getChoice3());
 
             questionCounter++;
-            TextCount.setText("Question: " + questionCounter + "/" + questionTotal);
+            TextCount.setText(R.string.question+" " + questionCounter + "/" + questionTotal);
             answer = false;
-            next.setText("confirm");
+            next.setText(R.string.confirm_button);
         }else{
             endQuiz();
 
@@ -130,7 +130,6 @@ private void AnswerChecker(){
     public void endQuiz() {
         Intent intent= new Intent(QuestionActivity.this, ResultScoreActivity.class);
         intent.putExtra("newScore",score);
-        System.out.println("actual score"+ score);
         startActivity(intent);
 
     }
@@ -143,22 +142,22 @@ private void AnswerChecker(){
         switch (current.getAnswer_number()) {
             case 1:
                 rad1.setTextColor(Color.GREEN);
-                TextQuestions.setText("Answer 1 is correct");
+                TextQuestions.setText(R.string.sentence_correct1);
                 break;
             case 2:
                 rad2.setTextColor(Color.GREEN);
-                TextQuestions.setText("Answer 2 is correct");
+                TextQuestions.setText(R.string.sentence_correct2);
                 break;
             case 3:
                 rad3.setTextColor(Color.GREEN);
-                TextQuestions.setText("Answer 3 is correct");
+                TextQuestions.setText(R.string.sentence_correct3);
                 break;
         }
 
         if (questionCounter < questionTotal) {
-            next.setText("Next");
+            next.setText(R.string.next_button);
         } else {
-            next.setText("Finish");
+            next.setText(R.string.finish_button);
 
         }
     }

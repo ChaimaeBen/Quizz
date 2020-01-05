@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizz.Database.repository.userRepository;
@@ -27,7 +28,7 @@ public class RegisterFragment extends Fragment {
     private EditText em, first, last;
     private EditText pass, passConfirm;
     private Button btn;
-
+private TextView goLogin;
     private userRepository mrep;
     private ArrayList<User> mUser;
     public RegisterFragment() {
@@ -49,6 +50,23 @@ public class RegisterFragment extends Fragment {
         pass=view.findViewById(R.id.password_id);
         passConfirm=view.findViewById(R.id.password_confirm);
         mrep = new userRepository(this.getActivity().getApplication());
+goLogin= view.findViewById(R.id.id_goTologin);
+
+        goLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                LoginFragment llf = new LoginFragment();
+                ft.replace(R.id.frame_main, llf);
+                ft.commit();
+            }
+        });
+
+
+
+
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -61,29 +79,29 @@ public class RegisterFragment extends Fragment {
                 User user = new User();
 
                 if (TextUtils.isEmpty(F1)) {
-                    first.setError("You must enter firstname");
+                    first.setError(getText(R.string.enter_firstname));
                 } else {
                     user.setFirstname(F1);
                 }
                 if (TextUtils.isEmpty(L1)) {
-                    last.setError("You must enter lastname");
+                    last.setError(getText(R.string.enter_lastname ));
                 } else {
                     user.setLastname(L1);
                 }
                 if (isEmail(email) == false) {
-                    em.setError("You must enter valid email");
+                    em.setError(getText(R.string.enter_valid_email));
                 } else {
                     user.setEmail(email);
                 }
                 if (TextUtils.isEmpty(password)) {
-                    pass.setError("You must enter password");
+                    pass.setError(getText(R.string.enter_password));
                 }
 
                 if (TextUtils.isEmpty(passwordConfirm)) {
-                    passConfirm.setError("You must confirm password");
+                    passConfirm.setError(getText(R.string.confirm_password));
 
                     if (!passwordConfirm.matches(password)) {
-                        Toast.makeText(getContext(), "password do not match", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.match_password, Toast.LENGTH_SHORT).show();
                     }
 
                 } else {

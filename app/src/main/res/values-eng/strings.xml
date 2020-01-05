@@ -7,4 +7,42 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next_button" tools:ignore="ExtraTranslation">next</string>
    <string name="finish_button" translatable="false">Finish</string>
+    <string name="confirm_button" translatable="false">confirm</string>
+    <string name="sentence_correct1" translatable="false" tools:ignore="ExtraTranslation">Answer 1 is correct</string>
+    <string name="sentence_correct2" translatable="false" tools:ignore="ExtraTranslation">Answer 2 is correct</string>
+    <string name="sentence_correct3" translatable="false" tools:ignore="ExtraTranslation">Answer 3 is correct</string>
+    <string name="please_answer" translatable="false" tools:ignore="ExtraTranslation">Please select an answer </string>
+    <string name="enter_password" translatable="false" tools:ignore="ExtraTranslation">You must enter password</string>
+    <string name="incorrect" translatable="false" tools:ignore="ExtraTranslation">  email or password incorrect</string>
+    <string name="question" translatable="false" tools:ignore="ExtraTranslation">Question: </string>
+
+    <string name="enter_valid_email" translatable="false" tools:ignore="ExtraTranslation"> You must enter valid email</string>
+
+    <string name="enter_firstname" translatable="false" tools:ignore="ExtraTranslation">You must enter firstname</string>
+    <string name="enter_lastname" translatable="false" tools:ignore="ExtraTranslation"> You must enter lastname</string>
+    <string name="confirm_password" translatable="false" tools:ignore="ExtraTranslation">You must confirm password</string>
+    <string name="match_password" translatable="false" tools:ignore="ExtraTranslation">password do not match</string>
+    <string name="highest_score" translatable="false" tools:ignore="ExtraTranslation">highest score</string>
+    <string name="Quit" translatable="false" tools:ignore="ExtraTranslation">Quit</string>
+    <string name="retry" translatable="false" tools:ignore="ExtraTranslation">Retry</string>
+
+    <string name="random_quiz" translatable="false" tools:ignore="ExtraTranslation">Play Random Quiz</string>
+    <string name="more_categories" translatable="false" tools:ignore="ExtraTranslation">more categories</string>
+    <string name="world_score" translatable="false" tools:ignore="ExtraTranslation">World score</string>
+
+    <string name="welcome" translatable="false" tools:ignore="ExtraTranslation">Welcome to Quick Quiz</string>
+    <string name="login" translatable="false" tools:ignore="ExtraTranslation">Login</string>
+    <string name="email" translatable="false" tools:ignore="ExtraTranslation">email</string>
+    <string name="password" translatable="false" tools:ignore="ExtraTranslation">password</string>
+    <string name="register_yet" translatable="false" tools:ignore="ExtraTranslation">not registered yet?</string>
+    <string name="create_account" translatable="false" tools:ignore="ExtraTranslation">create your account</string>
+
+    <string name="firstname" translatable="false" tools:ignore="ExtraTranslation">firstname</string>
+    <string name="lastname" translatable="false" tools:ignore="ExtraTranslation">lastname</string>
+    <string name="password_confirm" translatable="false" tools:ignore="ExtraTranslation">confirm password</string>
+    <string name="sign_in" translatable="false" tools:ignore="ExtraTranslation">sign in</string>
+    <string name="already_account" translatable="false" tools:ignore="ExtraTranslation"> already have an account?</string>
+
+    <string name="go_login" translatable="false" tools:ignore="ExtraTranslation"> go to login</string>
+
 </resources>
