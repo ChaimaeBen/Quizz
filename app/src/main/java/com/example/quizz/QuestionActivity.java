@@ -57,8 +57,6 @@ next = findViewById(R.id.id_next);
 
         mrep = new QuestionRepository(this.getApplication());
 
-
-
         mQuestions= mrep.getRandomQuestions();
         questionTotal = mQuestions.size();
         Collections.shuffle(mQuestions);

@@ -31,16 +31,16 @@ public class User {
 
     @ColumnInfo(name = "confirmPassword")
     private String confirmPassword;
-    @ColumnInfo(name = "HighScore")
-    private int HighScore;
+    @ColumnInfo(name = "newHigh")
+    private int newHigh;
 
 
-    public int getHighScore() {
-        return HighScore;
+    public int getNewHigh() {
+        return newHigh;
     }
 
-    public void setHighScore(int highScore) {
-        HighScore = highScore;
+    public void setNewHigh(int newHigh) {
+        this.newHigh = newHigh;
     }
 
     public String getConfirmPassword() {

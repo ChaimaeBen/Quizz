@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager =getSupportFragmentManager();
+        mrep = new QuestionRepository(this.getApplication());
 
         if(findViewById(R.id.frame_main)!=null){
             if(savedInstanceState!=null){

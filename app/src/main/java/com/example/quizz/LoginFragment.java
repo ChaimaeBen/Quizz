@@ -1,6 +1,7 @@
 package com.example.quizz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import com.example.quizz.Database.dao.UserDao;
 import com.example.quizz.Database.repository.userRepository;
 import com.example.quizz.models.User;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -88,6 +91,7 @@ private TextView txtCreate;
                 if (mrep.verify(email, pa)!=null) {
                     SessionLogin session = new SessionLogin(getContext().getApplicationContext());
                     session.setLogin(true);
+
 
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
