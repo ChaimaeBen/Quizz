@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.map_icon);
+        getSupportActionBar().setIcon(R.drawable.searchlogobigger);
 
 
     }

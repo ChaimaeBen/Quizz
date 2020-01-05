@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/minimalist"
+    android:background="@drawable/saturn"
     tools:context=".ResultScoreActivity">
 
     <TextView
@@ -17,7 +17,6 @@
         android:layout_marginEnd="87dp"
         android:layout_marginRight="87dp"
         android:layout_marginBottom="52dp"
-        android:background="#3B447E"
         android:fontFamily="sans-serif-black"
         android:text="Game Over"
         android:textColor="#F82169"
@@ -35,24 +34,25 @@
         android:layout_height="45dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="67dp"
         android:layout_marginRight="67dp"
-        android:background="#363F72"
+        android:background="#54493F3F"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_GameOverText">
 
         <TextView
             android:id="@+id/id_scoreText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Score:"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/id_scoreResult"
@@ -60,8 +60,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="0"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textColor="#F0145D"
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,9 +71,10 @@
         android:layout_height="53dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="67dp"
         android:layout_marginRight="67dp"
-        android:background="#363F72"
+        android:background="#54493F3F"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.764"
@@ -85,8 +87,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/highest_score"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textColor="#FFFEFE"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/id_highestScore"
@@ -94,8 +97,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="400"
-            android:textColor="@android:color/white"
-            android:textSize="24sp" />
+            android:textColor="#F0145D"
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button

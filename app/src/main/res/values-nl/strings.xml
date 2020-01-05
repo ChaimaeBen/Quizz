@@ -30,7 +30,7 @@
     <string name="random_quiz" translatable="false" tools:ignore="ExtraTranslation">Willekeurige Quiz</string>
     <string name="more_categories" translatable="false" tools:ignore="ExtraTranslation">meer categorieën</string>
     <string name="world_score" translatable="false" tools:ignore="ExtraTranslation">Wereld scores</string>
-    <string name="welcome" translatable="false" tools:ignore="ExtraTranslation">Welkom Bij Quick Quiz</string>
+    <string name="welcome" translatable="false" tools:ignore="ExtraTranslation">Welkom Bij </string>
     <string name="login" translatable="false" tools:ignore="ExtraTranslation">Login</string>
     <string name="email" translatable="false" tools:ignore="ExtraTranslation">email</string>
     <string name="password" translatable="false" tools:ignore="ExtraTranslation">Wachtwoord</string>

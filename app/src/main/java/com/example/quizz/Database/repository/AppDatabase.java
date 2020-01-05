@@ -20,7 +20,7 @@ import com.example.quizz.models.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = { Category.class,Question.class, User.class}, version = 10, exportSchema = false)
+@Database(entities = { Category.class,Question.class, User.class}, version = 11, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract CategoryDao categoryDao();
     public abstract QuestionDao questionDao();

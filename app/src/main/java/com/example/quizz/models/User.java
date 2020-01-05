@@ -31,6 +31,17 @@ public class User {
 
     @ColumnInfo(name = "confirmPassword")
     private String confirmPassword;
+    @ColumnInfo(name = "HighScore")
+    private int HighScore;
+
+
+    public int getHighScore() {
+        return HighScore;
+    }
+
+    public void setHighScore(int highScore) {
+        HighScore = highScore;
+    }
 
     public String getConfirmPassword() {
         return confirmPassword;

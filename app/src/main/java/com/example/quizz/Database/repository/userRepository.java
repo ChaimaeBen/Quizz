@@ -66,6 +66,17 @@ public class userRepository {
     }
 
 
+
+    public void updateUser(User user,int score){
+         user.setHighScore(score);
+            mUserDao.Update(user);
+
+           }
+
+
+
+
+
     private  class GetUsersAsyncTask extends AsyncTask<Void, Void, List<User>>
     {
 

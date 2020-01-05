@@ -42,6 +42,8 @@ private Button retryButton;
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SessionLogin session = new SessionLogin(getApplicationContext());
+                session.setLogin(false);
 
                 Intent aa = new Intent(ResultScoreActivity.this,MainActivity.class);
                 startActivity(aa);

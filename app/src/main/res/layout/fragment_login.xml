@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@drawable/gradient"
+    android:background="#1A1414"
     tools:context=".LoginFragment">
 
 
@@ -21,11 +21,13 @@
         android:layout_marginTop="244dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
-        android:background="#11000000"
+        android:background="#11F0ECEC"
         android:drawableLeft="@drawable/ic_action_profile"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="#7E7979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,11 +44,13 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:background="#11000000"
+        android:background="#11F5F2F2"
         android:drawableLeft="@drawable/ic_action_password"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="#7E7979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_id" />
@@ -63,6 +67,7 @@
         android:layout_marginRight="12dp"
         android:layout_marginBottom="36dp"
         android:text="@string/register_yet"
+        android:textColor="#FFFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/id_creatTxt"
         app:layout_constraintStart_toStartOf="parent" />
@@ -77,16 +82,17 @@
         android:layout_marginTop="68dp"
         android:background="@drawable/buttonshape"
         android:text="@string/login"
+        android:textColor="#D31457"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_id" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="245dp"
+        android:layout_height="122dp"
         android:layout_marginBottom="42dp"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@drawable/transparantlogo"
         app:layout_constraintBottom_toTopOf="@+id/email_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -101,6 +107,7 @@
         android:layout_marginRight="70dp"
         android:layout_marginBottom="36dp"
         android:text="@string/create_account"
+        android:textColor="#FFFFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_account" />
