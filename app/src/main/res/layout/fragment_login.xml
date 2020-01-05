@@ -69,12 +69,13 @@
 
     <Button
         android:id="@+id/log_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="131dp"
+        android:layout_height="47dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/buttonshape"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
