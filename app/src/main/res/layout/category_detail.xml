@@ -6,21 +6,24 @@
     style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/minimalistspace"
     android:fitsSystemWindows="true"
     tools:context=".CategoryDetailFragment">
 
 
     <TextView
         android:id="@+id/detail_totalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="133dp"
+        android:layout_height="57dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="46dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-black"
         android:text="Score: 0"
-        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,10 +38,13 @@
         android:layout_marginEnd="258dp"
         android:layout_marginRight="258dp"
         android:layout_marginBottom="13dp"
+        android:fontFamily="sans-serif-black"
         android:text="Question 1/x"
-        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/category_detail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,17 +67,21 @@
 
     <TextView
         android:id="@+id/detail_question"
-        android:layout_width="351dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
+        android:background="@drawable/question"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:padding="20dp"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_detail" />
 
@@ -81,10 +91,13 @@
         android:layout_height="0dp"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="47dp"
         android:layout_marginRight="47dp"
+        android:background="@drawable/question"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail_question">
 
@@ -92,39 +105,46 @@
             android:id="@+id/detail_radio1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="RadioButton"
+            android:textColor="@android:color/white"
             android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/detail_radio2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="RadioButton"
+            android:textColor="@android:color/white"
             android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/detail_radio3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="RadioButton"
+            android:textColor="@android:color/white"
             android:textSize="18sp" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/detail_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="161dp"
+        android:layout_width="172dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="77dp"
+        android:background="@drawable/buttonshape"
         android:text="NEXT"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioDetailGroup"
         app:layout_constraintVertical_bias="0.0" />
