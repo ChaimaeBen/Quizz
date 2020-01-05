@@ -2,6 +2,7 @@ package com.example.quizz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -27,6 +28,8 @@ import com.example.quizz.dummy.DummyContent;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * A fragment representing a single Category detail screen.
  * This fragment is either contained in a {@link CategoryListActivity}
@@ -39,9 +42,8 @@ public class CategoryDetailFragment extends Fragment {
      * represents.
      */
     public static final String ARG_ITEM_ID = "item_id";
-    public static final String display_score = "newScore";
 
-    /**
+       /**
      * The dummy content this fragment is presenting.
      */
 
@@ -60,6 +62,7 @@ public class CategoryDetailFragment extends Fragment {
     private int questionCounter;
     private int questionTotal;
     private ColorStateList textDefaultColor;
+    private int highscore;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -179,8 +182,8 @@ public class CategoryDetailFragment extends Fragment {
         Intent intent= new Intent(getActivity(), ResultScoreActivity.class);
         intent.putExtra("newScore",score);
         startActivity(intent);
-    }
 
+       }
 
 
     private void showSolution() {

@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,9 @@ import android.widget.TextView;
 public class ResultScoreActivity extends FragmentActivity {
 private Button retryButton;
     private TextView TotalScore;
+    private TextView HighText;
     private Button quitButton;
+    private int highscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +30,14 @@ private Button retryButton;
         TotalScore = findViewById(R.id.id_scoreResult);
         retryButton = findViewById(R.id.id_retryButton);
         quitButton = findViewById(R.id.id_quitButton);
+        HighText = findViewById(R.id.id_highestScore);
 
         TotalScore.setText(String.valueOf((extraScore)));
+        setHigh();
 
+        if(extraScore>highscore) {
+            updateHighscore(extraScore);
+        }
 
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,4 +58,21 @@ private Button retryButton;
             }
         });
     }
+
+    private void setHigh() {
+        SharedPreferences prefs = getSharedPreferences("highPref", MODE_PRIVATE);
+        highscore = prefs.getInt("highKey", 0);
+        HighText.setText(String.valueOf(highscore));
+    }
+
+    private void updateHighscore(int highscoreNew) {
+        highscore = highscoreNew;
+        HighText.setText(String.valueOf(highscore));
+
+        SharedPreferences prefs = getSharedPreferences("highPref", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("highKey", highscore);
+        editor.apply();
+    }
 }
+

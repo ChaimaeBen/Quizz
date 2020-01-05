@@ -22,12 +22,6 @@ public class HomeFragment extends Fragment {
     private Button startButton;
     private Button catButton;
 
-    private static final int REQUEST_CODE_QUIZ = 1;
-
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String KEY_HIGHSCORE = "key_Highscore";
-
-    private TextView textViewHighscore;
     View view;
 
     public HomeFragment() {
