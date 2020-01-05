@@ -67,9 +67,8 @@ public class userRepository {
 
 
 
-    public void updateUser(User user,int score){
-         user.setNewHigh(score);
-            mUserDao.Update(user);
+    public void updateUser(String email,int score){
+            mUserDao.UpdateScore(score,email);
 
            }
 

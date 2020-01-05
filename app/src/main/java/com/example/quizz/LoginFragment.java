@@ -92,6 +92,10 @@ private TextView txtCreate;
                     SessionLogin session = new SessionLogin(getContext().getApplicationContext());
                     session.setLogin(true);
 
+                    SharedPreferences prefs = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("email", email);
+                    editor.apply();
 
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();

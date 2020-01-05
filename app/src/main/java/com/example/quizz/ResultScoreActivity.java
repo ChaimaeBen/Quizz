@@ -14,12 +14,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.quizz.Database.repository.userRepository;
+
 public class ResultScoreActivity extends FragmentActivity {
 private Button retryButton;
     private TextView TotalScore;
     private TextView HighText;
     private Button quitButton;
     private int highscore;
+    private userRepository mrep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +38,22 @@ private Button retryButton;
 
         TotalScore.setText(String.valueOf((extraScore)));
         setHigh();
+        mrep = new userRepository(ResultScoreActivity.this.getApplication());
+
+
+        SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
+
+        String s1 = sh.getString("email", "");
+
+        System.out.println(s1);
 
         if(extraScore>highscore) {
             updateHighscore(extraScore);
+            mrep.updateUser(s1,extraScore);
+
+        }else{
+            mrep.updateUser(s1,highscore);
+
         }
 
 
@@ -45,9 +61,14 @@ private Button retryButton;
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SessionLogin session = new SessionLogin(getApplicationContext());
+                session.setLogin(false);
+
 
                 Intent aa = new Intent(ResultScoreActivity.this,MainActivity.class);
                 startActivity(aa);
+
+
 
             }
         });

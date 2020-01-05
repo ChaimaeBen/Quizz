@@ -33,8 +33,8 @@ public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
-    @Update
-    void Update(User user);
+    @Query("UPDATE User SET newHigh = :highscore WHERE email = :email ")
+    void UpdateScore(int highscore,String email);
 
     @Query("SELECT * FROM User where UserId=:Id")
     int getById(int Id);
