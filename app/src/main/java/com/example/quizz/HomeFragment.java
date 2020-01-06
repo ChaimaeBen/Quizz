@@ -44,7 +44,6 @@ public class HomeFragment extends Fragment {
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().show();
 
-
         world.setOnClickListener((View v) -> {
             DirectToScore();
         });

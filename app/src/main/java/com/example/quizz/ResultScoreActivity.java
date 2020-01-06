@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.quizz.Database.repository.userRepository;
@@ -23,11 +24,18 @@ private Button retryButton;
     private TextView HighText;
     private Button quitButton;
     private int highscore;
+    private ImageView img;
     private userRepository mrep;
+    public static FragmentManager fragmentManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_score);
+        fragmentManager = getSupportFragmentManager();
+
+
 
         Intent intent = getIntent();
         int extraScore = intent.getIntExtra("newScore",0);
@@ -36,7 +44,6 @@ private Button retryButton;
         retryButton = findViewById(R.id.id_retryButton);
         quitButton = findViewById(R.id.id_quitButton);
         HighText = findViewById(R.id.id_highestScore);
-
         TotalScore.setText(String.valueOf((extraScore)));
         setHigh();
         mrep = new userRepository(ResultScoreActivity.this.getApplication());
