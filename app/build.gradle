@@ -8,7 +8,16 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+    configurations.all
+            {
+                resolutionStrategy.eachDependency { details ->
+                    if (details.requested.group == 'androidx.arch.core'
+                            && !details.requested.name.contains('core-runtime')) {
+                        details.useVersion "2.0.1"
+                    }
 
+                }
+            }
     defaultConfig {
         applicationId "com.example.quizz"
         minSdkVersion 16
@@ -39,6 +48,9 @@ android {
         def coreTestingVersion = '2.1.0'
         def materialVersion = '1.0.0'
 
+        // Required for instrumented tests
+        androidTestImplementation 'com.android.support:support-annotations:24.0.0'
+        androidTestImplementation 'com.android.support.test:runner:0.5'
         // Room components
         implementation "androidx.room:room-runtime:$roomVersion"
         annotationProcessor "androidx.room:room-compiler:$roomVersion"
@@ -47,9 +59,10 @@ android {
         implementation 'android.arch.persistence.room:runtime:1.1.1'
         annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 // UI
-        implementation "com.google.android.material:material:$materialVersion"
+        androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
-// Testing
+        implementation "com.google.android.material:material:$materialVersion"
+        testImplementation 'org.mockito:mockito-core:1.10.19'
         androidTestImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
     }
 }
@@ -63,4 +76,5 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
 }

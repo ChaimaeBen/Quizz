@@ -24,6 +24,11 @@ public interface CategoryDao {
     Category getById(int Id);
 
 
+    @Query("SELECT * FROM Category where category_name=:name")
+    Category getByName(String name);
+
+
+
     @Insert
     void insert(Category category);
 

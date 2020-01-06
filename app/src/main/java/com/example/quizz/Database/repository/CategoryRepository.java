@@ -41,6 +41,11 @@ public class CategoryRepository {
         return cat;
 
     }
+    public Category getCategoryByName(String name) {
+      return  mCategoryDao.getByName(name);
+    }
+
+
 
     public void getAllCategories(@NonNull LoadDataCallback<Category> activityCallback) {
         new GetCategoriesAsyncTask(mCategoryDao, activityCallback).execute();
