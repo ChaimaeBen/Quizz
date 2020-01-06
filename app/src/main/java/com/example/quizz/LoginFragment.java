@@ -97,7 +97,7 @@ private TextView txtCreate;
                     SharedPreferences prefs = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("email", email);
-                     editor.apply();
+                   editor.apply();
 
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();

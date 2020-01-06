@@ -51,9 +51,7 @@ public class CategoryListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-
-
-
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (findViewById(R.id.category_detail_container) != null) {
             // The detail container view will be present only in the
@@ -74,7 +72,11 @@ public class CategoryListActivity extends AppCompatActivity {
 
 
 
-
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
