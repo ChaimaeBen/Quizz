@@ -39,6 +39,11 @@ public interface UserDao {
     @Query("UPDATE User SET newHigh = :highscore WHERE email = :email ")
     void UpdateScore(int highscore,String email);
 
+    @Query("Select * FROM User where email=:email ")
+     User getScoreUser(String email);
+
+
+
     @Query("SELECT * FROM User where UserId=:Id")
     int getById(int Id);
 

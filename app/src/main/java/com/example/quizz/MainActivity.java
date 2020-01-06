@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         crep = new CategoryRepository(this.getApplication());
 
 
-
 /*
+
    Category c1 = new Category(0,"Film","difficulty level: easy");
         Category c2 = new Category(0,"History","difficulty level: meduim");
         Category c3 = new Category(0,"Geography","difficulty level: hard");
@@ -58,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
         crep.insertCategories(c11);
 
 
-        Question q1 = new Question(0,"A is correct","A","B","C",1,1);
-        Question q2 = new Question(0,"C is correct","A","B","C",3,2);
-        Question q3 = new Question(0,"B is correct","A","B","C",2,3);
-        Question q4 = new Question(0,"A is correct","A","B","C",1,4);
-        Question q5 = new Question(0,"B is correct","A","B","C",2,5);
+        Question q1 = new Question(0,"Who won an oscar in 1997?","A","B","C",1,1);
+        Question q2 = new Question(0,"When was Napoleon Born? ","A","B","C",3,2);
+        Question q3 = new Question(0,"What is the capital of Canada","A","B","C",2,3);
+        Question q4 = new Question(0,"Who is the host of SNL","A","B","C",1,4);
+        Question q5 = new Question(0,"What is the molecule for water?","A","B","C",2,5);
         Question q6 = new Question(0,"C is correct","A","B","C",3,6);
         Question q7 = new Question(0,"C is correct","A","B","C",3,7);
         Question q8 = new Question(0,"A is correct","A","B","C",1,8);
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
         mrep.insert(q12);
 
 
-        */
 
+*/
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.searchlogobigger);

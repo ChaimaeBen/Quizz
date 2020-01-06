@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.quizz.Database.repository.userRepository;
+import com.example.quizz.models.User;
 
 public class ResultScoreActivity extends FragmentActivity {
 private Button retryButton;
@@ -47,7 +48,13 @@ private Button retryButton;
 
         System.out.println(s1);
 
-        if(extraScore>highscore) {
+
+        User u = mrep.getScoreUser(s1);
+        System.out.print("getter: "+u.getNewHigh());
+
+
+
+        if(extraScore>u.getNewHigh()) {
             updateHighscore(extraScore);
             mrep.updateUser(s1,extraScore);
 

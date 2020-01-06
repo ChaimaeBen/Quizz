@@ -68,8 +68,10 @@ private User u;
 
 
         String em = A.getString("email", "");
-int highscore=Az.getInt("highKey",0);
 
+
+User u =rep.getScoreUser(em);
+         int highscore = u.getNewHigh();
 u = rep.getUserEmail(em);
     String fi= u.getFirstname();
    String ls=  u.getLastname();

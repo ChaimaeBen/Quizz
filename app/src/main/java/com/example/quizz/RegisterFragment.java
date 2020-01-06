@@ -1,5 +1,6 @@
 package com.example.quizz;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -21,6 +22,7 @@ import com.example.quizz.models.User;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class RegisterFragment extends Fragment {
@@ -110,6 +112,12 @@ goLogin= view.findViewById(R.id.id_goTologin);
                     SessionLogin session = new SessionLogin(getContext().getApplicationContext());
                     session.setLogin(true);
 
+                    SharedPreferences prefs = getActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("email", email);
+                    editor.apply();
+
+
                     FragmentManager fm = getFragmentManager();
                     FragmentTransaction ft = fm.beginTransaction();
                     HomeFragment llf = new HomeFragment();
@@ -118,7 +126,6 @@ goLogin= view.findViewById(R.id.id_goTologin);
 
                 }
 
-                user.setAddress("bla");
                 mrep.insertUsers(user);
 
 

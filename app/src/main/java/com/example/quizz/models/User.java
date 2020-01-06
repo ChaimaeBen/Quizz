@@ -20,9 +20,6 @@ public class User {
     @ColumnInfo(name = "firstname")
     private String firstname;
 
-    @ColumnInfo(name = "address")
-    private String address;
-
     @ColumnInfo(name = "Password")
     private String Password;
 
@@ -75,13 +72,6 @@ public class User {
         this.firstname = firstname;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getPassword() {
         return Password;

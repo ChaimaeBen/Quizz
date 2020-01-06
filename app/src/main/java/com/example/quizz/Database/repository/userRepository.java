@@ -79,6 +79,8 @@ public User getUserEmail(String email){
            }
 
 
+           public  User getScoreUser(String email){
+          return mUserDao.getScoreUser(email);           }
 
 
 
