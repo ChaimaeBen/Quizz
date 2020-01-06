@@ -66,7 +66,9 @@ public class userRepository {
     }
 
 
-
+public User getUserEmail(String email){
+        return mUserDao.getUserByEmail(email);
+}
     public void updateUser(String email,int score){
             mUserDao.UpdateScore(score,email);
 

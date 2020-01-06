@@ -1,6 +1,5 @@
 package com.example.quizz;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -44,8 +43,8 @@ private TextView goLogin;
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
         em = view.findViewById(R.id.email_id);
-        first = view.findViewById(R.id.firstname);
-        last = view.findViewById(R.id.lastname);
+        first = view.findViewById(R.id.firstname_reg);
+        last = view.findViewById(R.id.lastname_reg);
         btn = view.findViewById(R.id.log_btn);
         pass=view.findViewById(R.id.password_id);
         passConfirm=view.findViewById(R.id.password_confirm);

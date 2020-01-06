@@ -120,6 +120,10 @@ public class MainActivity extends AppCompatActivity {
                          SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
                          SharedPreferences.Editor editor = sh.edit();
                          editor.remove("email");
+                         editor.remove("lastname");
+                         editor.remove("firstname");
+                         editor.remove("address");
+
                          editor.apply();
 
                          FragmentTransaction at = fragmentManager.beginTransaction();

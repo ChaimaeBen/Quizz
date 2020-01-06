@@ -18,8 +18,8 @@ public interface UserDao {
     @Query("SELECT * FROM User")
      List<User> getAll();
 
-    @Query("SELECT * FROM User where firstname LIKE :username")
-    User getByFirstName(String username);
+    @Query("SELECT * FROM User where email LIKE :email")
+    User getUserByEmail(String email);
 
     @Query("DELETE FROM User")
     void deleteAll();
