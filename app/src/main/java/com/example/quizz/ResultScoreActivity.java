@@ -85,7 +85,8 @@ img.setOnClickListener(new View.OnClickListener() {
             mrep.updateUser(s1,extraScore);
 
         }else{
-            mrep.updateUser(s1,extraScore);
+
+            HighText.setText(String.valueOf(u.getNewHigh()));
 
         }
 
