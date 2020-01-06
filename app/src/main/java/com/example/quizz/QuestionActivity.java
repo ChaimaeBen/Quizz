@@ -44,7 +44,7 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 next = findViewById(R.id.id_next);
         TextQuestions =findViewById(R.id.id_question);
         TextScore=findViewById(R.id.id_totalText);
@@ -85,6 +85,15 @@ next = findViewById(R.id.id_next);
 
 
     }
+
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
+    }
+
+
 private void AnswerChecker(){
         answer = true;
 
