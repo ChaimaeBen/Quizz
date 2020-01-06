@@ -1,11 +1,8 @@
 package com.example.quizz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,10 +12,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import com.example.quizz.Database.repository.userRepository;
 import com.example.quizz.models.User;
 
-public class ResultScoreActivity extends FragmentActivity {
+public class ResultScoreActivity extends AppCompatActivity {
 private Button retryButton;
     private TextView TotalScore;
     private TextView HighText;
@@ -26,14 +26,23 @@ private Button retryButton;
     private int highscore;
     private ImageView img;
     private userRepository mrep;
-    public static FragmentManager fragmentManager;
 
+    public static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_score);
+
         fragmentManager = getSupportFragmentManager();
+
+
+        if (findViewById(R.id.id_frfr) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+
+        }
 
 
 
@@ -44,6 +53,7 @@ private Button retryButton;
         retryButton = findViewById(R.id.id_retryButton);
         quitButton = findViewById(R.id.id_quitButton);
         HighText = findViewById(R.id.id_highestScore);
+        img= findViewById(R.id.id_home);
         TotalScore.setText(String.valueOf((extraScore)));
         setHigh();
         mrep = new userRepository(ResultScoreActivity.this.getApplication());
@@ -59,7 +69,16 @@ private Button retryButton;
         User u = mrep.getScoreUser(s1);
         System.out.print("getter: "+u.getNewHigh());
 
+img.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        retryButton.setVisibility(View.GONE);
+        quitButton.setVisibility(View.GONE);
+        fragmentManager.beginTransaction().add(R.id.id_frfr, new HomeFragment()).commit();
 
+
+    }
+});
 
         if(extraScore>u.getNewHigh()) {
             updateHighscore(extraScore);

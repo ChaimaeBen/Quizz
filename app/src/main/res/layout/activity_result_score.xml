@@ -10,16 +10,15 @@
 
     <TextView
         android:id="@+id/id_GameOverText"
-        android:layout_width="253dp"
-        android:layout_height="84dp"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
         android:layout_marginStart="87dp"
         android:layout_marginLeft="87dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="87dp"
         android:layout_marginRight="87dp"
         android:layout_marginBottom="52dp"
         android:fontFamily="sans-serif-black"
-        android:gravity="center"
         android:text="Game Over"
         android:textColor="#F82169"
         android:textSize="36sp"
@@ -36,7 +35,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="67dp"
         android:layout_marginLeft="67dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="135dp"
         android:layout_marginEnd="67dp"
         android:layout_marginRight="67dp"
         android:background="#54493F3F"
@@ -136,5 +135,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/id_retryButton"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <ImageView
+        android:id="@+id/id_home"
+        android:layout_width="102dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginLeft="171dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginRight="138dp"
+        android:layout_marginBottom="51dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_retryButton"
+        app:srcCompat="@drawable/home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
