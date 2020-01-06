@@ -97,7 +97,11 @@ img.setOnClickListener(new View.OnClickListener() {
                 SessionLogin session = new SessionLogin(getApplicationContext());
                 session.setLogin(false);
 
+                 SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
+                SharedPreferences.Editor editor = sh.edit();
+                editor.remove("email");
 
+                editor.apply();
                 Intent aa = new Intent(ResultScoreActivity.this,MainActivity.class);
                 startActivity(aa);
 
