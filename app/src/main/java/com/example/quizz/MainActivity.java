@@ -111,7 +111,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.rankingItem:
-                /* DO EDIT */
+                Intent intent = new Intent(getApplicationContext(), LeaderBoardActivity.class);
+                startActivity(intent);
+
+
                 return true;
                      case R.id.logout:
                 SessionLogin session = new SessionLogin(this.getApplicationContext());
@@ -120,9 +123,6 @@ public class MainActivity extends AppCompatActivity {
                          SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
                          SharedPreferences.Editor editor = sh.edit();
                          editor.remove("email");
-                         editor.remove("lastname");
-                         editor.remove("firstname");
-                         editor.remove("address");
 
                          editor.apply();
 
