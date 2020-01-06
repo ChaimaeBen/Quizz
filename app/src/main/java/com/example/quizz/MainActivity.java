@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -115,12 +116,29 @@ public class MainActivity extends AppCompatActivity {
                      case R.id.logout:
                 SessionLogin session = new SessionLogin(this.getApplicationContext());
                 session.setLogin(false);
+
+                         SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
+                         SharedPreferences.Editor editor = sh.edit();
+                         editor.remove("email");
+                         editor.apply();
+
+                         FragmentTransaction at = fragmentManager.beginTransaction();
+                         LoginFragment az = new LoginFragment();
+                         at.replace(R.id.frame_main, az);
+                         at.commit();
                 return true;
             case R.id.profileItem:
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ProfileFragment llf = new ProfileFragment();
                 ft.replace(R.id.frame_main, llf);
                 ft.commit();
+                return true;
+            case R.id.homeItem:
+
+                FragmentTransaction ar = fragmentManager.beginTransaction();
+                HomeFragment tt = new HomeFragment();
+                ar.replace(R.id.frame_main, tt);
+                ar.commit();
                 return true;
         }
         return super.onOptionsItemSelected(item);
