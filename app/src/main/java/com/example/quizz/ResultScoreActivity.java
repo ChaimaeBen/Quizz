@@ -85,7 +85,7 @@ img.setOnClickListener(new View.OnClickListener() {
             mrep.updateUser(s1,extraScore);
 
         }else{
-            mrep.updateUser(s1,highscore);
+            mrep.updateUser(s1,extraScore);
 
         }
 
@@ -97,7 +97,7 @@ img.setOnClickListener(new View.OnClickListener() {
                 SessionLogin session = new SessionLogin(getApplicationContext());
                 session.setLogin(false);
 
-                 SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
+                         SharedPreferences sh= getSharedPreferences("MySharedPref",MODE_PRIVATE);
                 SharedPreferences.Editor editor = sh.edit();
                 editor.remove("email");
 
