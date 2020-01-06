@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutionException;
 
 public class userRepository {
 
+    private List<User> users;
     private UserDao mUserDao;
 
     private AppDatabase myDb;
@@ -19,7 +20,7 @@ public class userRepository {
     public userRepository(Application application) {
         myDb = AppDatabase.getDatabase(application);
         mUserDao = myDb.userDao();
-
+users = mUserDao.getAllScores();
     }
 
 
@@ -36,6 +37,9 @@ public class userRepository {
 
         // run the Runnable in a separate thread
         new Thread(runInsert).start();
+    }
+    public List<User> getAllScores(){
+        return users;
     }
 
     public User verify(final String email,final String pa) {

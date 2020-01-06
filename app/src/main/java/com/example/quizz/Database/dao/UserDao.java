@@ -17,6 +17,9 @@ public interface UserDao {
 
     @Query("SELECT * FROM User")
      List<User> getAll();
+    @Query("SELECT * FROM User ORDER BY newHigh DESC")
+    List<User> getAllScores();
+
 
     @Query("SELECT * FROM User where email LIKE :email")
     User getUserByEmail(String email);

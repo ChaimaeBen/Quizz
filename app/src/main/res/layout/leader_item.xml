@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#E3DBE4"
     android:orientation="vertical">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:background="@drawable/item_shape">
+        android:background="#00853B3B">
 
         <TextView
             android:id="@+id/content"
@@ -23,7 +24,7 @@
             android:layout_marginRight="22dp"
             android:layout_marginBottom="8dp"
             android:textAppearance="?attr/textAppearanceListItem"
-            android:textColor="#3D2C5C"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

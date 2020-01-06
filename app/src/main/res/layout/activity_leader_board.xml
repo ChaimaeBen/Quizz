@@ -4,53 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/minimalistspace"
+    android:background="#D35C6870"
     tools:context=".LeaderBoardActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="347dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginRight="110dp"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Leaderboard"
-        android:textColor="#EEE9E9"
-        android:textSize="30sp"
-        android:textStyle="bold"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="407dp"
+        android:layout_height="122dp"
+        android:layout_marginBottom="3dp"
+        android:background="#020838"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="507dp"
-        android:layout_height="902dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-        <FrameLayout
-            android:id="@+id/frameLayout"
+        <TextView
+            android:id="@+id/id_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:layout_editor_absoluteY="129dp">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="LeaderBoard"
+            android:textColor="#E4A39595"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-            <include
-                layout="@layout/leader_list"
-                android:layout_width="482dp"
-                android:layout_height="907dp" />
-        </FrameLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/id_subTitle"
+            android:layout_width="336dp"
+            android:layout_height="56dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Top 10 best scores"
+            android:textColor="#DFEEE7E7"
+            android:textStyle="bold" />
 
+    </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="702dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/minimalist"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <include
+            layout="@layout/leader_list"
+            android:layout_width="383dp"
+            android:layout_height="827dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
