@@ -93,7 +93,7 @@
         </TableLayout>
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/id_profilePic"
             android:layout_width="109dp"
             android:layout_height="101dp"
             android:layout_marginStart="134dp"
@@ -124,7 +124,7 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/id_profilePic" />
 
         <ImageView
             android:id="@+id/imageView5"
