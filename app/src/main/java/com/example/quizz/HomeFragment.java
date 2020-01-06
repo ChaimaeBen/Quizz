@@ -22,7 +22,7 @@ import com.example.quizz.R;
 public class HomeFragment extends Fragment {
     private Button startButton;
     private Button catButton;
-
+  private Button world;
     View view;
 
     public HomeFragment() {
@@ -39,8 +39,15 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         startButton = view.findViewById(R.id.id_startButton);
         catButton = view.findViewById(R.id.id_categoryButton);
+        world = view.findViewById(R.id.id_world);
+
+
         ((AppCompatActivity) getActivity()).getSupportActionBar().show();
 
+
+        world.setOnClickListener((View v) -> {
+            DirectToScore();
+        });
         catButton.setOnClickListener((View v) -> {
             DirectToCategory();
         });
@@ -60,6 +67,12 @@ public class HomeFragment extends Fragment {
         Intent intent = new Intent(getContext(), QuestionActivity.class);
         startActivity(intent);
     }
+
+    private void DirectToScore(){
+        Intent intent = new Intent(getContext(), LeaderBoardActivity.class);
+        startActivity(intent);
+    }
+
 
     private void DirectToCategory(){
         Intent intent = new Intent(getContext(), CategoryListActivity.class);
