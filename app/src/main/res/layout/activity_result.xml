@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+    <TableLayout
+        android:layout_width="389dp"
+        android:layout_height="292dp"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="201dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <TextView
+                android:id="@+id/id_totalText"
+                android:layout_width="218dp"
+                android:layout_height="64dp"
+                android:text="Total Questions"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id_scoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:text="score "
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id_correctText"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:text="Correct Answers"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/id_incorrectText"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:text="Incorrect Answers"
+                android:textSize="24sp" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
